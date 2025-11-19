@@ -1,0 +1,10 @@
+FROM ruby:3.3.4
+
+RUN apt-get update -yqq && \
+  apt-get install rsync -y && \
+  apt-get install -yqq --no-install-recommends curl && \
+  curl --silent --location https://deb.nodesource.com/setup_22.x | bash -
+RUN apt-get install -y nodejs && \
+  npm install --global yarn 
+
+WORKDIR /srv/app/

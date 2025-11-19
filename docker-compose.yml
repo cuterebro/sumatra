@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    networks:
+      - mynet
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/srv/app
+      - gems:/usr/local/bundle
+      - node_modules:/srv/app/node_modules
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+      - ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub:ro
+    environment:
+      - HISTFILE=/srv/app/tmp/.history
+    stdin_open: true
+    tty: true
+
+networks:
+  mynet:
+
+volumes:
+  gems:
+  node_modules:
+  

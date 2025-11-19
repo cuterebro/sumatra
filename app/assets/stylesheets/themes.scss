@@ -1,0 +1,22 @@
+:root {
+  --bg-color: white;
+  --fg-color: black;
+  --border: gray;
+  --dimmed: darkgray;
+  --font: FiraCode, monospace;
+  --sidebar-width: 180px;
+}
+
+.theme-dark {
+  --bg-color: black;
+  --fg-color: white;
+  --border: gray;
+  --dimmed: lightgray;
+  --font: FiraCode, monospace;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--font);
+}
