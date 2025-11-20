@@ -5,6 +5,7 @@
 import { application } from "./application"
 
 import "./theme_switcher"
+import "./sidebar"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

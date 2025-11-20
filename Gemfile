@@ -24,3 +24,7 @@ gem "hotwire-rails", "~> 0.1.3"
 gem "jsbundling-rails", "~> 1.3"
 
 gem "terser", "~> 1.2"
+
+gem "markdown_views", "~> 3.2"
+
+gem "view_component", "~> 4.1"

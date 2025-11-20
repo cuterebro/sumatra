@@ -1,0 +1,35 @@
+<%
+  links = [
+    {caption: 'Feed', href: '/feed', icon: 'square-menu'},
+    {caption: 'Topics', href: '/topics', icon: 'folder-open'},
+    {caption: 'Journal', href: '/journal', icon: 'book'},
+    {caption: 'Write', href: '/write', icon: 'square-pen'},
+    {caption: 'cIRC', href: '/chat', icon: 'message-square-text'},
+    {caption: 'Mail', href: '/messages', icon: 'mail'},
+    {caption: 'Bookmarks', href: '/bookmarks', icon: 'bookmark'},
+    {caption: 'Notifications', href: '/notifications', icon: 'bell'},
+    {caption: 'Profile', href: '/me', icon: 'circle-user-round'},
+    {caption: 'Directory', href: '/users', icon: 'notebook-tabs'},
+    {caption: 'Support', href: '/support', icon: 'heart'}
+  ]
+%>
+<aside class="sidebar <%= class_names(expanded: session[:sidebar_expanded]) %>" data-controller="sidebar">
+  <div class='sidebar-header'>
+    <%= link_to('/about') do %>
+      <span class='expanded'>Sumatra</span>
+      <span class='icon world-wide-web collapsed'></span>
+    <% end %>
+  </div>
+  <div class='sidebar-toggle'>
+    <span class='icon panel-close expanded' title='Toggle' data-action="click->sidebar#toggle"></span>
+    <span class='icon panel-open collapsed' title='Toggle' data-action="click->sidebar#toggle"></span>
+  </div>
+  <nav class='sidebar-nav'>
+    <%= turbo_frame_tag :sidebar_nav, target: :_top do %> 
+      <%= render SidebarLinkComponent.with_collection(links) %>
+    <% end %>
+  </nav>
+  <div class='sidebar-footer'>
+    ver 0.0.1
+  </div>
+</aside>

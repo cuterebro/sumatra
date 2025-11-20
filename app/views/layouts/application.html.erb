@@ -6,6 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Sumatra">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="turbo-refresh-method" content="morph">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -23,25 +24,14 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <div class='page-layout'>
-      <aside class="sidebar">
-        <div class='sidebar-header'>
-          Sumatra
-        </div>
-        <div class='sidebar-nav'>
-          <div class='sidebar-item'>
-            Feed
-          </div>
-        </div>
-        <div class='sidebar-footer'>
-          ver 0.0.1
-        </div>
-
-      </aside>
+  <body class='<%= class_names('theme-dark' => (session[:theme] == 'dark')) %>'>
+    <div class='page-layout <%= class_names('sidebar-expanded' => session[:sidebar_expanded], 'sidebar-collapsed' => !session[:sidebar_expanded]) %> '>
+      <%= render 'shared/sidebar' %>
       <div class='main-area'>
         <main>
-          <%= yield %>
+          <%= turbo_frame_tag :main do %>
+            <%= yield %>
+          <% end %>
         </main>
         <footer>
           Подвал
