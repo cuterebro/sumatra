@@ -1,4 +1,6 @@
 class Space < ApplicationRecord
+  attr_readonly :host
+  
   MODES = {
     'public' => 'Public',
     'closed' => 'Closed',
@@ -7,6 +9,8 @@ class Space < ApplicationRecord
   }
   
   has_many :feeds, dependent: :destroy
+  has_many :users, dependent: :destroy
+  has_many :profiles, dependent: :destroy
 
   validates_presence_of :host
   validates_presence_of :title  

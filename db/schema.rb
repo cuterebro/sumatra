@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_22_150444) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_22_181942) do
   create_table "feeds", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.boolean "default", default: false, null: false
@@ -18,6 +18,16 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_22_150444) do
     t.string "title", null: false
     t.datetime "updated_at", null: false
     t.index ["space_id"], name: "index_feeds_on_space_id"
+  end
+
+  create_table "profiles", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+    t.text "bio"
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.bigint "space_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id", "name"], name: "index_profiles_on_space_id_and_name", unique: true
+    t.index ["space_id"], name: "index_profiles_on_space_id"
   end
 
   create_table "spaces", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
@@ -29,5 +39,27 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_22_150444) do
     t.index ["host"], name: "index_spaces_on_host", unique: true
   end
 
+  create_table "user_profiles", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["profile_id"], name: "index_user_profiles_on_profile_id"
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
+  end
+
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email", null: false
+    t.string "name", null: false
+    t.bigint "space_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id", "email"], name: "index_users_on_space_id_and_email", unique: true
+    t.index ["space_id", "name"], name: "index_users_on_space_id_and_name", unique: true
+    t.index ["space_id"], name: "index_users_on_space_id"
+  end
+
   add_foreign_key "feeds", "spaces"
+  add_foreign_key "profiles", "spaces"
+  add_foreign_key "user_profiles", "profiles"
+  add_foreign_key "user_profiles", "users"
+  add_foreign_key "users", "spaces"
 end
