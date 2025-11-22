@@ -2,14 +2,21 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.1"
-# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-gem "propshaft"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 2.1"
-# Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
-# Use Dart SASS [https://github.com/rails/dartsass-rails]
+
+# DB
+gem "trilogy", "~> 2.9"
+
+# Assets
+gem "propshaft"
+gem "jsbundling-rails", "~> 1.3"
 gem "dartsass-rails"
+gem "terser", "~> 1.2"
+
+# Views
+gem "hotwire-rails", "~> 0.1.3"
+gem "markdown_views", "~> 3.2"
+gem "view_component", "~> 4.1"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -19,12 +26,11 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 end
 
-gem "hotwire-rails", "~> 0.1.3"
+group :test do
+  gem "rspec", "~> 3.13"
+  gem "rspec-rails", "~> 8.0"
+  gem "factory_bot_rails", "~> 6.5"
+  gem "faker", "~> 3.5"
+end
 
-gem "jsbundling-rails", "~> 1.3"
 
-gem "terser", "~> 1.2"
-
-gem "markdown_views", "~> 3.2"
-
-gem "view_component", "~> 4.1"

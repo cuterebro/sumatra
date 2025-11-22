@@ -15,10 +15,12 @@
 %>
 <aside class="sidebar <%= class_names(expanded: session[:sidebar_expanded]) %>" data-controller="sidebar">
   <div class='sidebar-header'>
-    <%= link_to('/about') do %>
-      <span class='expanded'>Sumatra</span>
-      <span class='icon world-wide-web collapsed'></span>
-    <% end %>
+    <div class='sidebar-item'>
+      <%= link_to('/about') do %>
+        <span class='expanded'>Sumatra</span>
+        <span class='icon world-wide-web collapsed'></span>
+      <% end %>
+    </div>
   </div>
   <div class='sidebar-toggle'>
     <span class='icon panel-close expanded' title='Toggle' data-action="click->sidebar#toggle"></span>

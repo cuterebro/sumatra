@@ -1,5 +1,8 @@
 # Changelog
 
+### v0.0.2
+  * Emptyness and spaces are created
+
 ### v0.0.1
   * Project created
   * Basic layout done

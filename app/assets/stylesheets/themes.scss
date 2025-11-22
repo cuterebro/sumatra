@@ -21,7 +21,7 @@ body {
 }
 
 a {
-  color: var(--fg-color);
+  color: var(--dimmed);
   text-decoration: none;
   &:active {
     color: var(--bg-color);

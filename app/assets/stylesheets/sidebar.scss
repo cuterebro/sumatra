@@ -27,7 +27,7 @@
 
   width: var(--sidebar-width);
   .sidebar-header {
-    padding: var(--padding);
+    
   }
   .sidebar-toggle {
     padding: 1em;
@@ -39,21 +39,21 @@
     flex: 1 1 0%;
     overflow-y: auto;
     overflow-x: hidden;
-    .sidebar-item {
-      border-top: 1px var(--border) solid;
-      a {
-        display: flex;
-        width: 100%;
-        padding: 0.5em 0;
-        transition: all .3s ease;
-        span {
-          padding-left: 1em;
-        }
-        .icon {
-          width: 20px;
-          height: 20px;
-          margin: 0 auto;
-        }
+  }
+  .sidebar-item {
+    border-top: 1px var(--border) solid;
+    a {
+      display: flex;
+      width: 100%;
+      padding: 0.5em 0;
+      transition: all .3s ease;
+      span {
+        padding-left: 1em;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
       }
     }
   }

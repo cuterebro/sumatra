@@ -13,10 +13,26 @@ services:
       - node_modules:/srv/app/node_modules
       - ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro
       - ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub:ro
+    env_file:
+      - db.env
     environment:
       - HISTFILE=/srv/app/tmp/.history
     stdin_open: true
     tty: true
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mariadb:10.2
+    command: --default-authentication-plugin=mysql_native_password --innodb-flush-method=fsync --innodb-use-native-aio=0
+    networks:
+      - mynet
+    env_file:
+      - db.env
+    environment:
+      - MARIADB_ROOT_PASSWORD=123
+    volumes:
+      - db:/var/lib/mysql
 
 networks:
   mynet:
@@ -24,4 +40,4 @@ networks:
 volumes:
   gems:
   node_modules:
-  
+  db:

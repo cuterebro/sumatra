@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound,
     with: ->(exception) { render 'errors/404', status: :not_found }
 
+
+  def current_space
+    request.env['SPACE']
+  end
+  helper_method :current_space
 end

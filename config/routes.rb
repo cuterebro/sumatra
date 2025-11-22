@@ -9,9 +9,15 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  # Defines the root path route ("/")
-  root 'home#index'
-  post 'user_settings' => 'user_settings#update'
+  scope constraints: ->(request) { request.env['SPACE'].blank? } do
+    root 'home#emptyness', as: :emptyness
+    get '*path' => 'home#emptyness'
+  end
 
-  get ':path' => 'pages#show'
+  scope constraints: ->(request) { request.env['SPACE'].present? } do
+    root 'home#index'
+    post 'user_settings' => 'user_settings#update'
+
+    get ':path' => 'pages#show'
+  end
 end

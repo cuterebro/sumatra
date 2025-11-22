@@ -1,0 +1,5 @@
+# Доступ ограничен
+
+Доступ к сайту ограничен в соответствии с Федеральными законами № 114-ФЗ от 25.07.2002 (О противодействии экстремистской деятельности), № 436-ФЗ от 29.12.2010 (О защите детей от информации, причиняющей вред их здоровью и развитию), № 149-ФЗ от 27.07.2006 (Об информации, информационных технологиях и о защите информации) и Постановлением Правительства РФ от 26.10.2012 № 1101. Проверить наличие сетевого адреса в Едином реестре можно в разделе «Просмотр реестра» на сайте [eais.rkn.gov.ru](https://eais.rkn.gov.ru/). Блокировка происходит по URL запрашиваемого ресурса.
+
+Access to the site is restricted in accordance with the Federal Law № 114-FZ of 25.07.2002 (On Counterworking the Extremist Activity), № 436-FZ of 29.12.2010 (On Protecting Children From Information Seen As Harmful To Their Health and Development), № 149-FZ of 27.07.2006 (On Information, Information Technologies and Data Protection) and Decree of the RF Government of 26.10.2012 № 1101. You can check the network address availability in a Unified Register in the section «View Registry» [eais.rkn.gov.ru](https://eais.rkn.gov.ru/). Blocking occurs by the URL of the requested resource.
