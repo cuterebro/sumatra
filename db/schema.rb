@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_22_181942) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_23_101213) do
   create_table "feeds", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.boolean "default", default: false, null: false
@@ -18,6 +18,16 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_22_181942) do
     t.string "title", null: false
     t.datetime "updated_at", null: false
     t.index ["space_id"], name: "index_feeds_on_space_id"
+  end
+
+  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+    t.text "content", default: "", null: false
+    t.datetime "created_at", null: false
+    t.bigint "feed_id", null: false
+    t.bigint "profile_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["feed_id"], name: "index_posts_on_feed_id"
+    t.index ["profile_id"], name: "index_posts_on_profile_id"
   end
 
   create_table "profiles", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
@@ -58,6 +68,8 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_22_181942) do
   end
 
   add_foreign_key "feeds", "spaces"
+  add_foreign_key "posts", "feeds"
+  add_foreign_key "posts", "profiles"
   add_foreign_key "profiles", "spaces"
   add_foreign_key "user_profiles", "profiles"
   add_foreign_key "user_profiles", "users"

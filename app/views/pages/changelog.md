@@ -3,6 +3,7 @@
 ### v0.0.2
   * Emptyness and spaces are created
   * Users and profiles
+  * Posts
 
 ### v0.0.1
   * Project created

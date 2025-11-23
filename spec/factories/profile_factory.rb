@@ -5,5 +5,10 @@ FactoryBot.define do
     space { build(:space) }
     name { 'cuterebro' }
     bio { 'The boss' }
+
+    trait :other do
+      name { 'otherguy' }
+      bio { 'The othere guy' }      
+    end
   end
 end

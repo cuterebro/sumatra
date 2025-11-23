@@ -4,5 +4,6 @@ class Profile < ApplicationRecord
 
   has_many :user_profiles, dependent: :destroy
   has_many :users, through: :user_profiles
+  has_many :posts, dependent: :destroy
   validates_presence_of :users
 end
