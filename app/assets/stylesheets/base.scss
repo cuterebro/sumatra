@@ -1,0 +1,19 @@
+body {
+  background: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--font);
+}
+
+a {
+  color: var(--dimmed);
+  text-decoration: none;
+  &:active {
+    color: var(--bg-color);
+    background: var(--fg-color);
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: 1px var(--border) solid;
+}

@@ -18,6 +18,12 @@ Rails.application.routes.draw do
     root 'home#index'
     post 'user_settings' => 'user_settings#update'
 
+    get 'me' => 'profiles#show_me', as: :my_profile
+    scope '@(:profile)' do
+      get '/' => 'profiles#show', as: :profile
+      get ':post_id' => 'posts#show', as: :post
+    end
+
     get ':path' => 'pages#show'
   end
 end

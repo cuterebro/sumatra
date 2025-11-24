@@ -34,3 +34,7 @@ group :test do
 end
 
 
+
+gem "kaminari", "~> 1.2"
+
+gem "bullet", "~> 8.1"
