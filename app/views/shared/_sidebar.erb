@@ -1,6 +1,6 @@
 <%
   links = [
-    {caption: 'Feed', href: '/feed', icon: 'square-menu'},
+    {caption: 'Feed', href: root_path, icon: 'square-menu'},
     {caption: 'Topics', href: '/topics', icon: 'folder-open'},
     {caption: 'Journal', href: '/journal', icon: 'book'},
     {caption: 'Write', href: '/write', icon: 'square-pen'},
@@ -17,7 +17,7 @@
   <div class='sidebar-header'>
     <div class='sidebar-item'>
       <%= link_to('/about') do %>
-        <span class='expanded'>Sumatra</span>
+        <span class='expanded large'>Sumatra</span>
         <span class='icon world-wide-web collapsed'></span>
       <% end %>
     </div>
@@ -32,6 +32,6 @@
     <% end %>
   </nav>
   <div class='sidebar-footer'>
-    ver 0.0.1
+    <%= link_to("v#{Sumatra::VERSION}", '/changelog', class: 'xsmall') %>
   </div>
 </aside>

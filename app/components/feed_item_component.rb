@@ -6,10 +6,10 @@ class FeedItemComponent < ViewComponent::Base
     <div class='feed-item'>
       <div class='header'>
         <span class='username'>
-          <%= link_to('@' + profile.name, profile_path(profile: profile.name)) %> 
+          <%= link_to('@' + profile.name, profile_path(profile: profile.name), class: 'strong') %> 
         </span>
-        <span class='info'>
-          <%= time_ago_in_words(post.created_at) + " ago" %>
+        <span class='info small dimmed'>
+          <%= helpers.time_ago_string(post.created_at) %>
         </span>
       </div>
       <hr />
@@ -17,8 +17,8 @@ class FeedItemComponent < ViewComponent::Base
         <%== post.content %>
       </div>
       <hr />
-      <div class='footer'>
-        <%= link_to "Open", post_path(profile: profile.name, post_id: post.id) %> 
+      <div class='footer small'>
+        <%= link_to "[↵] Open", post_path(profile: profile.name, post_id: post.id), class: 'dimmed' %> 
       </div>
     </div>
   ERB

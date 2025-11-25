@@ -5,8 +5,19 @@ body {
 }
 
 a {
-  color: var(--dimmed);
+  color: var(--fg-color);
+
   text-decoration: none;
+  transition: color .3s ease;
+
+  &:hover {
+    color: var(--dimmed);
+  }
+
+  &.dimmed:hover {
+    color: var(--fg-color);
+  }
+
   &:active {
     color: var(--bg-color);
     background: var(--fg-color);
@@ -16,4 +27,24 @@ a {
 hr {
   border: none;
   border-bottom: 1px var(--border) solid;
+}
+
+.small {
+  font-size: small;
+}
+
+.xsmall {
+  font-size: x-small;
+}
+
+.large {
+  font-size: large;  
+}
+
+.dimmed {
+  color: var(--dimmed);  
+}
+
+.strong {
+  font-weight: bold;
 }

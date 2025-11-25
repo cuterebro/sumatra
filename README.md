@@ -8,4 +8,6 @@ It's a simple text-only social network written in Ruby on Rails. Highly inspired
 
 Current stage: the early begining, nothing to show yet, but there's a [changelog](app/views/pages/changelog.md).
 
+![Recent screenshot](/public/screenshot.png)
+
 The name of the project is random and doesn't mean anything. Could be changed later. 

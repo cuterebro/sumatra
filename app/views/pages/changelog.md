@@ -4,6 +4,7 @@
   * Emptyness and spaces are created
   * Users and profiles
   * Posts
+  * Feed page
 
 ### v0.0.1
   * Project created
