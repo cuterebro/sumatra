@@ -30,7 +30,7 @@
       <%= render 'shared/sidebar' %>
       <div class='main-area'>
         <main>
-          <%= turbo_frame_tag :main do %>
+          <%= turbo_frame_tag :main, target: '_top' do %>
             <%= yield %>
           <% end %>
         </main>

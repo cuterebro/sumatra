@@ -1,0 +1,29 @@
+.profiles {
+  .profiles-list {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+
+  .profile-item {
+    a:hover {
+      color: var(--fg-color);
+    }
+    .name {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .list-card {
+    border: 1px var(--dimmed) solid;
+    padding: .8em 1em;
+    transition: border .3s ease;
+    min-width: 6em;
+    max-width: 12em;
+    height: 6em;
+    &:hover {
+      border: 1px var(--fg-color) solid;
+    }
+  }
+}

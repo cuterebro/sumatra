@@ -29,6 +29,11 @@ hr {
   border-bottom: 1px var(--border) solid;
 }
 
+h1 {
+  font-size: large;
+  text-transform: uppercase;
+}
+
 .small {
   font-size: small;
 }
@@ -48,3 +53,4 @@ hr {
 .strong {
   font-weight: bold;
 }
+

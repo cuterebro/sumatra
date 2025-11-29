@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_feed
 
+  def current_profile
+    nil
+  end
+  helper_method :current_profile
+
 end

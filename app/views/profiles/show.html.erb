@@ -1,1 +1,27 @@
-<%= @profile.name %>
+<h1>Profile</h1>
+<div class='profile'>
+  <div class='card invert'>
+    <div class='header'>
+      <span class='name'>
+        @<%= @profile.name %>
+      </span>
+      <span class='date small'>
+        Joined <%= @profile.created_at.to_date.to_formatted_s(:long) %>
+      </span>
+    </div>
+    <div class='body'>
+      <%= @profile.bio %>
+    </div>
+    <hr>
+    <div class='footer'>
+      <span class='popups small'>
+        <span>Followers</span>
+        <span>Following</span>
+      </span>
+    </div>
+  </div>
+
+  <div class='feed'>
+    <%= render FeedItemComponent.with_collection(@posts) %>
+  </div>  
+</div>

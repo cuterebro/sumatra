@@ -5,6 +5,8 @@
   * Users and profiles
   * Posts
   * Feed page
+  * Profile amd post
+  * Profiles list
 
 ### v0.0.1
   * Project created

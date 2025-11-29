@@ -3,7 +3,7 @@ class FeedItemComponent < ViewComponent::Base
   attr_reader :post, :profile
 
   erb_template <<-ERB
-    <div class='feed-item'>
+    <div class='feed-item card'>
       <div class='header'>
         <span class='username'>
           <%= link_to('@' + profile.name, profile_path(profile: profile.name), class: 'strong') %> 
