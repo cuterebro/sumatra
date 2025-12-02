@@ -1,5 +1,8 @@
 # Changelog
 
+### v0.0.3
+  * Core and plugins
+
 ### v0.0.2
   * Emptyness and spaces are created
   * Users and profiles

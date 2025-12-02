@@ -1,0 +1,3 @@
+class SpacePlugin < Plugin
+
+end

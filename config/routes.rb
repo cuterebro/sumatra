@@ -15,18 +15,9 @@ Rails.application.routes.draw do
   end
 
   scope constraints: ->(request) { request.env['SPACE'].present? } do
-    root 'home#index'
     post 'user_settings' => 'user_settings#update'
 
-    scope 'profiles' do
-      get '/' => 'profiles#index', as: :profiles
-    end
-
-    get 'me' => 'profiles#show_me', as: :my_profile
-    scope '@(:profile)' do
-      get '/' => 'profiles#show', as: :profile
-      get ':post_id' => 'posts#show', as: :post
-    end
+    Core.instance.init_routes self
 
     get ':path' => 'pages#show'
   end
